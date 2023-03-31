@@ -9,7 +9,7 @@ export default function AddBook() {
     } 
     const onBookSubmit = async (e)=>{
         e.preventDefault()
-       const res = await axios.post('http://127.0.0.1:8000/api/create/',{...bookData})
+       const res = await axios.post('http://127.0.0.1:5000/books',{...bookData})
         console.log(res.data)
         setBookData({...setBookData,title:'',cost:'',cover:'',category:''})
         if (res.status ===200 ) {

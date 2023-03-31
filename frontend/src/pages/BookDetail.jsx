@@ -8,12 +8,11 @@ export default function BookDetail() {
   const [item, setItem] = useState(null);
   useEffect(() => {
     const getItem = async () => {
-      const res = await axios.get(`http://127.0.0.1:8000/api/all/${id}/`);
+      const res = await axios.get(`http://127.0.0.1:5000/books/${id}`);
       setItem(res.data);
     };
     getItem();
   }, []);
-  console.log(item);
   return <div className="mt-5 w-4/5 m-auto">
         {item && <div className="flex justify-start">
         <img src={item.cover} alt={item.title} />

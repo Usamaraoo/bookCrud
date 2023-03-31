@@ -11,7 +11,7 @@ const onChangeForm = (e)=>{
 } 
 const onBookSubmit = async (e)=>{
     e.preventDefault()
-   const res = await axios.post(`http://127.0.0.1:8000/api/update/${id}/`,{...bookData})
+   const res = await axios.put(`http://127.0.0.1:5000/books/${id}`,{...bookData})
     if (res.status ===200 ) {
         alert('Book updated')
     }

@@ -5,7 +5,7 @@ export default function List() {
   const [ listItems, setListItems] = useState(null)
   useEffect(() => {
     const getItems = async () =>{
-      const res = await axios.get('http://127.0.0.1:8000/api/all/')
+      const res = await axios.get('http://127.0.0.1:5000/books')
      setListItems(res.data)
     }
     getItems()
